@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sip & Snacks Menu</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('menu-background.jpeg');
+            background-size: 100% 100%; /* update this line */
+            background-repeat: no-repeat; /* add this line to prevent image repeat */
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #663399;
+            text-align: center;
+        }
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .menu-section {
+            flex: 1 1 calc(33% - 40px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background-image: url('menu-background.jpg');
+            background-size: cover;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-width: calc(33% - 40px);
+            text-align: center;
+        }
+        .menu-section h2 {
+            color: #ff6600;
+            margin: 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid #ccc;
+        }
+        .menu-section ul {
+            list-style-type: none;
+            padding: 10px;
+            display: none;
+        }
+        .menu-section li {
+            margin-bottom: 10px;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .menu-section li span {
+            float: right;
+        }
+        .back-button {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-button button {
+            padding: 10px 20px;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .menu-section {
+                max-width: 100%;
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Sip & Snacks Menu</h1>
+
+<div class="menu-container">
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Hot Beverages</h2>
+        <ul>
+            <li>Desi Chai <span>12/-</span></li>
+            <li>Masala Chai <span>15/-</span></li>
+            <li>Ginger Chai <span>15/-</span></li>
+            <li>Elachi Chai <span>15/-</span></li>
+            <li>Pepper Chai <span>18/-</span></li>
+            <li>Lemon Chai <span>15/-</span></li>
+            <li>Lemon Ginger Chai <span>15/-</span></li>
+            <li>Green Chai <span>15/-</span></li>
+            <li>Tulsi Chai <span>15/-</span></li>
+            <li>Hot Coffee <span>15/-</span></li>
+            <li>Hot Badam Milk <span>15/-</span></li>
+            <li>Horlicks <span>15/-</span></li>
+            <li>Boost <span>15/-</span></li>
+            <li>Chocolate Milk <span>15/-</span></li>
+            <li>Masala Milk <span>20/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Ice - Creams</h2>
+        <ul>
+            <li>Chocolate Fudge <span>90/-</span></li>
+            <li>Ice-Cream With Brownie <span>90/-</span></li>
+            <li>Criminal Choco Cashew <span>120/-</span></li>
+            <li>Gadbad <span>120/-</span></li>
+            <li>Death by Chocolate <span>130/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Falooda</h2>
+        <ul>
+            <li>Plain Falooda <span>65/-</span></li>
+            <li>Mix Ice-Cream <span>70/-</span></li>
+            <li>Kaju Falooda <span>80/-</span></li>
+            <li>Kulfi Falooda <span>80/-</span></li>
+            <li>Butter Scotch <span>80/-</span></li>
+            <li>Chocolate <span>80/-</span></li>
+            <li>Kesar Pista <span>80/-</span></li>
+            <li>Delhi Falooda <span>110/-</span></li>
+            <li>Royal Falooda <span>130/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Milk Shakes</h2>
+        <ul>
+            <li>Oreo <span>60/-</span></li>
+            <li>Chocolate <span>60/-</span></li>
+            <li>Banana <span>60/-</span></li>
+            <li>Chickoo <span>60/-</span></li>
+            <li>Sapota <span>60/-</span></li>
+            <li>Badam <span>60/-</span></li>
+            <li>Strawberry <span>90/-</span></li>
+            <li>Apple <span>70/-</span></li>
+            <li>Mango <span>70/-</span></li>
+            <li>Snicker Milk Shake <span>90/-</span></li>
+            <li>Kit Kat <span>80/-</span></li>
+            <li>Cafe Special <span>99/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Fruit Salad Bites</h2>
+        <ul>
+            <li>Fruit Salad Naked <span>80/-</span></li>
+            <li>Fruit Salad Macho <span>80/-</span></li>
+            <li>Fruit Salad 2 Scoops <span>99/-</span></li>
+            <li>Dry Fruits Salad <span>99/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Lassi</h2>
+        <ul>
+            <li>Sweet Lassi <span>50/-</span></li>
+            <li>Mango Lassi <span>60/-</span></li>
+            <li>Banana Lassi <span>60/-</span></li>
+            <li>Vanilla Lassi <span>60/-</span></li>
+            <li>Black Current Lassi <span>70/-</span></li>
+            <li>Honey Lassi <span>60/-</span></li>
+            <li>Fresh Fruit Lassi <span>65/-</span></li>
+            <li>Strawberry Lassi <span>70/-</span></li>
+            <li>Chocolate Lassi <span>70/-</span></li>
+            <li>Pista Lassi <span>80/-</span></li>
+            <li>Kesar Lassi <span>80/-</span></li>
+            <li>Dry Fruit Lassi <span>90/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Sandwich Sensation (veg)</h2>
+        <ul>
+            <li>Corn <span>69/-</span></li>
+            <li>Veg <span>69/-</span></li>
+            <li>Corn Cheese <span>89/-</span></li>
+            <li>Chilly Cheese <span>79/-</span></li>
+            <li>Veg Cheese <span>79/-</span></li>
+            <li>Paneer Cheese <span>109/-</span></li>
+            <li>Veg Club <span>109/-</span></li>
+            <li>Mayo Paneer+Veg <span>109/-</span></li>
+            <li>Paneer Club <span>129/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Sandwich Sensation (Non-veg)</h2>
+        <ul>
+            <li>Egg <span>69/-</span></li>
+            <li>Egg Cheese <span>79/-</span></li>
+            <li>Chicken <span>99/-</span></li>
+            <li>Chicken Cheese <span>109/-</span></li>
+            <li>Chicken Club <span>129/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Maggi Temptations</h2>
+        <ul>
+            <li>Plain Maggi <span>45/-</span></li>
+            <li>Veg Maggi <span>55/-</span></li>
+            <li>Egg Maggi <span>60/-</span></li>
+            <li>Cheesy Veg Maggi <span>70/-</span></li>
+            <li>Paneer Maggi <span>85/-</span></li>
+            <li>Chicken Maggi <span>109/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Bread Snacks</h2>
+        <ul>
+            <li>Bread Butter Toast <span>29/-</span></li>
+            <li>Bread Butter Jam <span>30/-</span></li>
+            <li>Bread Butter Cheese <span>40/-</span></li>
+            <li>Egg Bread Toast <span>45/-</span></li>
+            <li>Omelette (Double Egg) <span>35/-</span></li>
+            <li>Bread Omelette <span>49/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Burger Bonanza (Veg)</h2>
+        <ul>
+            <li>Veg <span>79/-</span></li>
+            <li>Corn <span>89/-</span></li>
+            <li>Mayo Veg <span>89/-</span></li>
+            <li>Spicy Veg Cheese <span>89/-</span></li>
+            <li>Paneer <span>109/-</span></li>
+            <li>Paneer Cheese <span>119/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Burger Bonanza (Non-Veg)</h2>
+        <ul>
+            <li>Chicken <span>89/-</span></li>
+            <li>Chicken Cheese <span>99/-</span></li>
+            <li>Chicken Cheese Combo <span>119/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Nugget Frenzy</h2>
+        <ul>
+            <li>Veg Cheese (8Pcs) <span>99/-</span></li>
+            <li>Chicken Nuggets <span>109/-</span></li>
+        </ul>
+    </div>
+
+    <div class="menu-section" onclick="toggleMenu(this)">
+        <h2>Fry Frenzy</h2>
+        <ul>
+            <li>French Fries <span>69/-</span></li>
+            <li>Peri Peri Fries <span>79/-</span></li>
+        </ul>
+    </div>
+</div>
+
+<div class="back-button" onclick="showMainMenu()">
+    <button>Back to Menu</button>
+</div>
+
+<script>
+        function toggleMenu(section) {
+            const ul = section.querySelector('ul');
+            const allSections = document.querySelectorAll('.menu-section');
+            const backButton = document.querySelector('.back-button');
+
+            allSections.forEach(sec => sec.style.display = 'none');
+            backButton.style.display = 'block';
+            section.style.display = 'block';
+            ul.style.display = 'block';
+        }
+
+        function showMainMenu() {
+            const allSections = document.querySelectorAll('.menu-section');
+            const backButton = document.querySelector('.back-button');
+
+            allSections.forEach(sec => {
+                sec.style.display = 'block';
+                const ul = sec.querySelector('ul');
+                ul.style.display = 'none';
+            });
+            backButton.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
