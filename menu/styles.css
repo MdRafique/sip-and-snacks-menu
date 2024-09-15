@@ -1,0 +1,136 @@
+/* Set the page size to A4 */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@font-face {
+    font-family: 'headingFont'; /*a name to be used later*/
+    src: url('Ananda Personal Use.ttf'); /*URL to font*/
+}
+
+html, body {
+  height: 297mm; /* A4 height */
+  width: 210mm;  /* A4 width */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(145, 48, 139, 1), rgba(145, 48, 139, 1) 50%, rgba(0, 0, 0, 0)),
+              url('background.jpg') no-repeat center center/cover;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.section {
+  flex: 1; /* This makes both sections equal */
+  padding-left: 40px;
+  padding-right: 40px;
+  box-sizing: border-box;
+  /* border-right: 2px solid black; /* Optional: Border between the sections */
+}
+
+.section:last-child {
+  border-right: none; /* Remove the border on the last section */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.heading {
+  margin-left: 70px; /* Space between the logo and heading */
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'headingFont';
+  letter-spacing: 8px;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+
+.menu {
+    width: 95%;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 1px;
+}
+
+.section-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, transparent, orange 50%, transparent);
+    color: yellow;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    width: 90%;
+    display: inline-block;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.3); */
+}
+
+.item span {
+    font-size: 14px;
+}
+
+.price {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* Optional: To print nicely */
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    -webkit-print-color-adjust: exact; /* Ensures that colors are printed accurately */
+    print-color-adjust: exact; /* Cross-browser support for accurate printing */
+    background-size: cover !important; /* Ensures the image scales correctly */
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    height: 100%;
+
+  }
+
+  .section-title {
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
+    background: linear-gradient(to right, rgba(255, 165, 0, 0.01), orange 50%, rgba(255, 165, 0, 0.01))
+  }
+
+}
